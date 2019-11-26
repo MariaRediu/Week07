@@ -101,7 +101,7 @@
 
                     List<UserPosts> userPosts = new List<UserPosts>();
                      UserPosts user1 = new UserPosts();
-         
+                  //   userPosts.AddRange();   ????????
                 
 
 
