@@ -48,7 +48,7 @@
               Console.ReadLine(); 
 
 
-            // 4 numberId lat and long negative.
+            // 4 numberId lat and long negative. NU CRED CA E CORECT?????????????????????????????
 
             var number = allUsers.OrderBy(x => x.Address.Geo.Lat<0).ThenBy(x => x.Address.Geo.Lng<0);
             Console.WriteLine(number);
@@ -56,7 +56,7 @@
             Console.ReadLine();
 
 
-            // 5 - find the post with longest body. CORRECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // 5 - find the post with longest body.  
 
 
              var longest = allPosts.OrderByDescending(x => x.Body.Length).First();
@@ -70,7 +70,7 @@
             Console.ReadLine();
 
 
-            // 7 - select all addresses in a new List<Address>. print the list. ??????????????????
+            // 7 - select all addresses in a new List<Address>. print the list. NU CRED CA E CORECT   ??????????????????
            List<Address> newAdress = new List<Address>();
              var adress = (from s in newAdress select new { s.Street, s.Suite, s.City, s.Zipcode, s.Geo }).ToList();
              foreach (var item in adress)
@@ -82,13 +82,13 @@
 
 
 
-            // 8 - print the user with min lat CORECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // 8 - print the user with min lat 
              var minLatitude = allUsers.Min(x => x.Address.Geo.Lat);
              Console.WriteLine($"Minim of latitude is {minLatitude}");
 
 
 
-            // 9 - print the user with max long CORECT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // 9 - print the user with max long 
              var maxLatitude = allUsers.Max(x => x.Address.Geo.Lng);
              Console.WriteLine($"Maximum of long is {maxLatitude}");
 
@@ -97,7 +97,7 @@
 
             // 10 - create a new class: public class UserPosts { public User User {get; set}; public List<Post> Posts {get; set} }
             //    - create a new list: List<UserPosts>
-            //    - insert in this list each user with his posts only NU STIU!!!!!!!!
+            //    - insert in this list each user with his posts only     NU STIU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
                     List<UserPosts> userPosts = new List<UserPosts>();
                      UserPosts user1 = new UserPosts();
@@ -109,7 +109,7 @@
 
 
 
-            // 11 - order users by zip code CORECT!!!!!!!!!!!!!!!!!!!!!!!!!
+            // 11 - order users by zip code 
 
             var UserByZipCode = allUsers.OrderBy(x => x.Address.Zipcode);
 
@@ -119,7 +119,7 @@
                }
                Console.ReadLine();  
 
-            // 12 - order users by number of posts
+            // 12 - order users by number of posts  ?????????????????????????????????
 
 
         }
