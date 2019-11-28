@@ -107,10 +107,11 @@
             */
             ////////////////////////////////////////////////////////////////////////////////////////////////////////
             // 8 - print the user with min lat  !!!!!!!!nu stiu cum sa fac print-ul!!!!!
-            /*
-             var minLatitude = allUsers.Min(x => x.Address.Geo.Lat);
-            Console.WriteLine(minLatitude);
-            */
+
+            // var minLatitude = allUsers.Min(x => x.Address.Geo.Lat);
+
+            // Console.WriteLine(minLatitude);
+
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
             // 9 - print the user with max long  !!!!!! nu stiu cum sa fac print-ul!!!
@@ -131,9 +132,6 @@
 
              */
 
-
-
-
             ////////////////////////////////////////////////////////////////////////////////////////////////////
             // 11 - order users by zip code (CORECT)
             /*
@@ -146,7 +144,7 @@
                Console.ReadLine();  
             */
             /////////////////////////////////////////////////////////////////////////////////////////////////////
-            // 12 - order users by number of posts =>>>>numarul de userID 
+            // 12 - order users by number of posts =>>>>numarul de userID  NU STIU !!!
 
             /*   var userOrder = allUsers.GroupBy(x => x.Id).Select(g => new
                {  User = g.Count() }).OrderBy(x => x.User);
@@ -157,21 +155,16 @@
                {
                    Console.WriteLine(elem);
                }
+                
+
 
             */
-            var userOrder = from s in allUsers
-                            orderby s.Id
-                            select s;
-
-            foreach (var elem in userOrder)
-            {
-                Console.WriteLine(elem.Name,elem.Id);
-            }
+          
             Console.ReadLine();
         }
+       
 
-
-        private static List<Post> ReadPosts(string file)
+    private static List<Post> ReadPosts(string file)
         {
             return ReadData.ReadFrom<Post>(file);
         }
