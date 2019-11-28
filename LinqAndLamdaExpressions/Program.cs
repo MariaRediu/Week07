@@ -72,21 +72,25 @@
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // 5 - find the post with longest body.  (CORECT)
-            /*
 
-             var longest = allPosts.OrderByDescending(x => x.Body.Length).First();
-                Console.WriteLine($"The post with id {longest.Id}  has the longest body : {longest.Body}  ");
-                Console.ReadLine();
 
-            */
+            //var longest = allPosts.OrderByDescending(x => x.Body.Length).First();
+            //Console.WriteLine($"The post with id {longest.Id}  has the longest body : {longest.Body}  ");
+            //Console.ReadLine();
+
+
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // 6 - print the name of the employee that have post with longest body.
-            /*
-            var nume = allUsers.Where(x => x.Id).ToList();
-            Console.WriteLine(nume);
-            Console.ReadLine();
-            */
+            // 6 - print the name of the employee that have post with longest body. ??????
 
+            //var nume = from a in allUsers
+            //           join b in allPosts on a.Name equals b.Body.Length
+            //           select new { Nume = a.Name, Posts = b.Body };
+
+            //Console.WriteLine(nume);
+            //Console.ReadLine();
+
+
+          
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // 7 - select all addresses in a new List<Address>. print the list. (CORECT)
             /*
@@ -106,20 +110,22 @@
             Console.ReadLine();
             */
             ////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // 8 - print the user with min lat  !!!!!!!!nu stiu cum sa fac print-ul!!!!!
+            // 8 - print the user with min lat  (CORECT)
 
-            // var minLatitude = allUsers.Min(x => x.Address.Geo.Lat);
+            //var minLatitude = allUsers.OrderBy(x => x.Address.Geo.Lat).Select(s=> new { s.Name, s.Address.Geo.Lat }).FirstOrDefault();
 
-            // Console.WriteLine(minLatitude);
+            //Console.WriteLine(minLatitude);
+            //Console.ReadLine();
+
+
 
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // 9 - print the user with max long  !!!!!! nu stiu cum sa fac print-ul!!!
-            /*
-            var maxLatitude = allUsers.Max(x => x.Address.Geo.Lng);
-             Console.WriteLine($" Maximum of long is {maxLatitude}");
+            // 9 - print the user with max long  (CORECT)
 
-            */
+            //var maxLongitude = allUsers.OrderBy(x => x.Address.Geo.Lng).Select(s => new { s.Name, s.Address.Geo.Lng }).LastOrDefault();
+            //Console.WriteLine(maxLongitude);
+            //Console.ReadLine();
 
             ////////////////////////////////////////////////////////////////////////////////////////////////////////////
             // 10 - create a new class: public class UserPosts { public User User {get; set}; public List<Post> Posts {get; set} }
@@ -144,23 +150,20 @@
                Console.ReadLine();  
             */
             /////////////////////////////////////////////////////////////////////////////////////////////////////
-            // 12 - order users by number of posts =>>>>numarul de userID  NU STIU !!!
-
-            /*   var userOrder = allUsers.GroupBy(x => x.Id).Select(g => new
-               {  User = g.Count() }).OrderBy(x => x.User);
-
-
-
-               foreach (var elem in userOrder)
-               {
-                   Console.WriteLine(elem);
-               }
-                
+            // 12 - order users by number of posts =>>>>(CORECT)
+            //var userOrder = allUsers.Join(allPosts,
+            //                                user => user.Id,
+            //                                post => post.UserId,
+            //                                (user, post) => new { user.Id, user.Name, postId = post.Id })
+            //                       .GroupBy(x => new { x.Id, x.Name })
+            //                       .Select(x => new { x.Key.Id, x.Key.Name, TotalPosts = x.Count() })
+            //                       .OrderBy(x => x.TotalPosts);
 
 
-            */
-          
-            Console.ReadLine();
+
+
+
+            //Console.ReadLine();
         }
        
 
